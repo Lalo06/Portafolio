@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/notes', [App\Http\Controllers\NotesController::class, 'index'])->name('notes');
+Route::get('/notes/create', [App\Http\Controllers\NotesController::class, 'create'])->name('notes.create');
+Route::post('/notes', [App\Http\Controllers\NotesController::class, 'store'])->name('notes.store');
